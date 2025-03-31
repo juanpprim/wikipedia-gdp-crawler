@@ -60,7 +60,6 @@ make format
 ```
 wikipedia-gdp-crawler/
 ├── src/                    # Source code
-│   └── wiki_gdp_crawler/   # Main package
 ├── tests/                  # Test directory
 ├── pyproject.toml          # Poetry configuration
 └── Makefile                # Make tasks
