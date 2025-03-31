@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wikipedia-gdp-crawler"
+version = "0.1.0"
+description = "Wikipedia GDP data crawler"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.poetry]
+name = "wiki-gdp-crawler"
+version = "0.1.0"
+description = "A crawler for GDP data from Wikipedia"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+httpx = "^0.25.0"
+msgspec = "^0.18.0"
+asyncio = "^3.4.3"
+bs4 = "^0.0.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-asyncio = "^0.21.1"
+coverage = "^7.3.1"
+mypy = "^1.5.1"
+ruff = "^0.0.290"
+
+[tool.poetry.scripts]
+wiki-gdp = "src.cli:main"
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+asyncio_mode = "auto"
+
+[tool.ruff]
+select = ["E", "F", "I"]
+line-length = 100
+target-version = "py39" 
